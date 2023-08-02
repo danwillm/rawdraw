@@ -33,6 +33,9 @@
 
 #ifdef ANDROID
 
+#include <android_native_app_glue.h>
+#include <jni.h>
+#include <android/native_activity.h>
 
 #include "CNFGAndroid.h"
 extern struct android_app * gapp;
@@ -42,9 +45,6 @@ int android_width, android_height;
 int override_android_screen_dimensons = 0;
 int android_sdk_version;
 
-#include <android_native_app_glue.h>
-#include <jni.h>
-#include <android/native_activity.h>
 #define ERRLOG(...) printf( __VA_ARGS__ );
 #else
 #define ERRLOG(...) fprintf( stderr, __VA_ARGS__ );
